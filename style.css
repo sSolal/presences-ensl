@@ -1,0 +1,166 @@
+
+html, body {
+  margin:0px;
+  padding:0px;
+}
+
+h1{
+  text-align: center;
+  font-size: 100px;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+}
+
+.menu {
+  background-color: #cfe2ff;
+  width:100px;
+  height:100vh;
+  position:fixed;
+  display:flex;
+  flex-direction: column;
+  padding-top : 80px;
+}
+.menu_button{
+  display:block;
+  height:80px;
+  margin:10px;
+  border-radius:10px;
+  background-color: #7ba9ff;
+  text-decoration: none;
+}
+.menu_button_picto{
+  text-align: center;
+  width:100%;
+  margin-top:10px;
+  font-size:40px !important;
+}
+.menu_button_text{
+  text-align:center;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+}
+
+.page {
+  background-color: #eeeeee;
+  margin-left:100px;
+  display:flex;
+  flex-direction: column;
+  flex-grow:1;
+}
+
+.hero {
+  display:flex;
+  flex-grow:1;
+  height:100vh;
+}
+.hero_panel{
+  background-color: #7ba9ff;
+  border-radius:40px;
+  margin : 10px;
+  flex-grow: 1;
+  display:flex;
+  flex-direction:column
+
+}
+.content {
+  display:flex;
+  flex-direction: row;
+}
+
+.scrollable{
+    width:50%;
+    border-radius:50px;
+}
+.slides{
+
+    height:100vh;
+    width:50%;
+    position:sticky;
+    border-radius: 50px;
+    top:0px;
+}
+.slide{
+
+    height:100vh;
+    width:100%;
+    position:absolute;
+
+    opacity:0;
+    transition: opacity 500ms ease-in-out;
+    display:flex;
+}
+.slide_panel{
+  flex-grow:1;
+  margin:10px;
+  border-radius:50px;
+  padding:50px;
+}
+
+.calendar{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+.calendar-cell{
+  background-color:#5f9dee;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  border-radius:30px;
+  padding: 20px;
+  width: 30%;
+}
+
+#slide_what > div {
+  background-color: #7ba9ff;
+  justify-content: center;
+  display:flex;
+  flex-direction: column;
+}
+#slide_calendar > div {
+  background-color: #7bf0ff;
+}
+#slide_structure > div {
+  background-color: #7bff9c;
+}
+#slide_contact > div {
+  background-color: #ff7b7b;
+}
+#slide_ressources > div {
+  background-color: #e7ff7b;
+}
+
+.active{
+  opacity:1;
+}
+.panel{
+    padding:50px;
+    height:100vh;
+    flex-grow:1;
+}
+
+.footer {
+  background-color: #1f6bff;
+}
+
+#whale{
+  width:100%;
+}
+
+.share{
+  width: 70%;
+  height: 60px;
+  padding: 10px;
+  font-size: 20px;
+  border:none;
+}
+.share_button{
+  width: 20%;
+  height: 60px;
+  border-radius: 30px;
+  
+  font-size: 20px;
+  background-color: #5f9dee;
+  color: white;
+}
