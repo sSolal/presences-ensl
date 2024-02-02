@@ -99,39 +99,7 @@ h1{
   padding:50px;
 }
 
-.calendar{
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
-}
-.calendar-cell{
-  background-color:#5f9dee;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-  border-radius:30px;
-  padding: 20px;
-  width: 30%;
-}
-
-#slide_what > div {
-  background-color: #7ba9ff;
-  justify-content: center;
-  display:flex;
-  flex-direction: column;
-}
-#slide_calendar > div {
-  background-color: #7bf0ff;
-}
-#slide_structure > div {
-  background-color: #7bff9c;
-}
-#slide_contact > div {
-  background-color: #ff7b7b;
-}
-#slide_ressources > div {
-  background-color: #e7ff7b;
-}
-
-.active{
+.slide.active{
   opacity:1;
 }
 .panel{
@@ -140,27 +108,3 @@ h1{
     flex-grow:1;
 }
 
-.footer {
-  background-color: #1f6bff;
-}
-
-#whale{
-  width:100%;
-}
-
-.share{
-  width: 70%;
-  height: 60px;
-  padding: 10px;
-  font-size: 20px;
-  border:none;
-}
-.share_button{
-  width: 20%;
-  height: 60px;
-  border-radius: 30px;
-  
-  font-size: 20px;
-  background-color: #5f9dee;
-  color: white;
-}
