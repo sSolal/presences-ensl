@@ -1,13 +1,39 @@
 
-.calendar{
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-  }
-  .calendar-cell{
-    background-color:#5f9dee;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-    border-radius:30px;
-    padding: 20px;
-    width: 30%;
-  }
+h1, h2, h3{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
+span{
+    color:#eeeeee;
+}
+.menu_button > div{
+    color:#333333;
+    font-weight: 800;
+}
+
+.button{
+    padding:20px;
+    width:fit-content;
+    height:fit-content;
+    display:block;
+    position:relative;
+    border-radius: 10px;
+    font-size: 24px;
+    background-color: #5f9dee;
+    color: white;
+    border:none;
+    text-decoration: none;
+}
+.inline_share{
+    display:flex;
+    flex-grow:1;
+    align-items:center;
+}
+.inline_share > input {
+    border-radius : 5px;
+    height:80px;
+    box-sizing: border-box;
+}
+.inline_share > .button {
+    height:80px;
+}

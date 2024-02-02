@@ -15,20 +15,25 @@ h1{
 }
 
 .menu {
-  background-color: #cfe2ff;
+  background-color: rgb(193, 248, 255);
+  box-shadow: -5px 0px 20px darkblue;
   width:100px;
   height:100vh;
+  box-sizing: border-box;
   position:fixed;
   display:flex;
   flex-direction: column;
-  padding-top : 80px;
+  justify-content: space-around;
+  padding-top:5vh;
+  padding-bottom:10vh;
 }
 .menu_button{
   display:block;
   height:80px;
   margin:10px;
   border-radius:10px;
-  background-color: #7ba9ff;
+  background-color:rgb(85, 164, 243);
+  box-shadow: inset 5px 5px 10px rgb(138, 196, 255);
   text-decoration: none;
 }
 .menu_button_picto{
@@ -57,12 +62,15 @@ h1{
   height:100vh;
 }
 .hero_panel{
-  background-color: #7ba9ff;
+  background: linear-gradient(217deg, #00e1ff, rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, #0983d5, rgba(0,255,0,0) 70.71%),
+            linear-gradient(0deg, rgba(0, 0, 180, 0.8), rgba(0,0,255,0) 70.71%);
   border-radius:40px;
-  margin : 10px;
+  margin : 16px;
   flex-grow: 1;
   display:flex;
-  flex-direction:column
+  flex-direction:column;
+  align-items: center;
 
 }
 .content {
@@ -101,10 +109,11 @@ h1{
 
 .slide.active{
   opacity:1;
+  z-index:10;
 }
 .panel{
     padding:50px;
-    height:100vh;
+    min-height:100vh;
     flex-grow:1;
 }
 
