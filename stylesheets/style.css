@@ -64,7 +64,6 @@ p{
 
 .hero_text{
   font-size:30px;
-  margin-left:80px;
   text-align: center;
   width:60%;
 }
@@ -92,4 +91,11 @@ iframe{
 }
 em{
   text-decoration: underline;
+}
+#mobileDropdown{
+  opacity:0;
+  position:absolute;
+  width:80px;
+  height:80px;
+  left:10px;
 }

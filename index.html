@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="stylesheets/components.css"></link>
     <link rel="stylesheet" href="stylesheets/style.css"></link>
     <link rel="stylesheet" href="stylesheets/structure.css"></link>
+    <link rel="stylesheet" href="stylesheets/mobile.css"></link>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,43 +15,59 @@
 </head>
 <body>
     <div class="container">
+    <div class="top_menu">
+        <span class="menu_button_picto material-symbols-outlined">
+            menu
+        </span>
+        <select id="mobileDropdown" style="">
+            <option value="what">Présences ?</option>
+            <option value="calendar">Nos évènements</option>
+            <option value="structure">Nos pôles</option>
+            <option value="contact">Nous contacter</option>
+            <option value="ressources">Ressources</option>
+            <option value="administratif">Adhérer</option>
+        </select>
+        <h3>Présences ENSL</h3>
+        <div style="width:80px;"></div>
+        
+    </div>
     <div class="menu">
-        <a class="menu_button" href="#landing">
+        <div class="menu_button" onclick="navigate('landing')">
                 <span class="menu_button_picto material-symbols-outlined">
                 home
                 </span>
             <div class="menu_button_text">Présences</div>
-        </a>
-        <a class="menu_button" href="#what">
+        </div>
+        <div class="menu_button" onclick="navigate('what')">
             <span class="menu_button_picto material-symbols-outlined">
             home
             </span>
         <div class="menu_button_text">L'asso</div>
-        </a>
-        <a class="menu_button" href="#calendar">
+        </div>
+        <div class="menu_button" onclick="navigate('calendar')">
             <span class="menu_button_picto material-symbols-outlined">
             event
             </span>
         <div class="menu_button_text">Calendrier</div>
-        </a>    
-        <a class="menu_button" href="#structure">
+        </div>    
+        <div class="menu_button" onclick="navigate('structure')">
             <span class="menu_button_picto material-symbols-outlined">
             filter_vintage
             </span>
         <div class="menu_button_text">Pôles</div>
-        </a>
-        <a class="menu_button" href="#contact">
+        </div>
+        <div class="menu_button" onclick="navigate('contact')">
             <span class="menu_button_picto material-symbols-outlined">
             connect_without_contact
             </span>
         <div class="menu_button_text">Contact</div>
-        </a>
-        <a class="menu_button" href="#ressources">
+        </div>
+        <div class="menu_button" onclick="navigate('ressources')">
             <span class="menu_button_picto material-symbols-outlined">
             auto_stories
             </span>
         <div class="menu_button_text">Ressources</div>
-        </a>
+        </div>
 
     </link>
         
@@ -113,7 +130,7 @@
                 <div id="ressources" class="panel">
                     <h2>Et on a aussi plein de ressources à vous proposer !</h2>
                     <h3> Notre <a href="documents/guide_de_survie.pdf" target="_blank">guide de survie en milieu universitaire</a></h3>
-                    Une petite compilation de conseils, de réflexion, et d'informations qu'on aurait bien aimé avoir entendu en arrivant en première année.
+                    Une petite compilation de conseils, de réflexions, et d'informations qu'on aurait bien aimé avoir entendu en arrivant en première année.
                     <h3>Une sélection de livres intéressants</h3>
                     Disponibles à l'emprunt pendant nos permanences, nous vous proposons la lecture de ces livres qui nous ont marqué, touché et parfois aidé
                     <ul>
@@ -176,18 +193,18 @@
                     <div class="slide_panel">
                         
                         <p>Si l'un de ces pôles vous intéresse, vous êtes absolument bienvenu·e</p>
-                        <p>N'hésitez pas à nous <a href="#contact">contacter</a>, ça n'engage à rien ! Ou bien à venir nous rencontrer pendant une permanence :)</p>
+                        <p class="secondary">N'hésitez pas à nous <a href="#contact">contacter</a>, ça n'engage à rien ! Ou bien à venir nous rencontrer pendant une permanence :)</p>
                         </div>
                 </div>
                 <div id="slide_contact" class="slide">
                     <div class="slide_panel">
                         
-                        <p> Si ce n'est pas à nous que vous souhaitez parler, ou bien que vous cherchez d'autres renseignement, n'hésitez pas à</p>
+                        <p class="secondary"> Si ce n'est pas à nous que vous souhaitez parler, ou bien que vous cherchez d'autres renseignements, n'hésitez pas à</p>
+                        <p class="mobile_only">N'hésitez pas aussi à</p>
                         <ul>
-                        <li>contacter le <a href="">service médical</a></li>
+                        <li>contacter le <a href="https://www.ens-lyon.fr/campus/en-pratique/sante-et-handicap">service médical</a></li>
                         <li>appeler <a href="https://www.nightline.fr/">Nightline</a>, disponible tous les soirs à partir de 20h30
                         </li>
-                        <li>...</li>
                     </ul>
                         <!--TO DO Finir cette liste TO DO-->
                         </div>
@@ -195,9 +212,9 @@
                 <div id="slide_ressources" class="slide">
                     <div class="slide_panel">
                         
-                        <p>Si vous avez connaissance de ressources qui vous paraissent avoir leur place ici, dites le nous !</p>
+                        <p class="secondary">Si vous avez connaissance de ressources qui vous paraissent avoir leur place ici, dites le nous !</p>
                         <form class="inline_share" method="post" action="#contact">
-                            <div contenteditable="true" class="share" placeholder="N'importe quoi, livre, contenu digital, idées, on prend tout !"></div>
+                            <div contenteditable="true" class="share" placeholder="Des suggestions de ressources ?"></div>
                             <input type="submit" class="button" value="Envoyer">
                         </form>
                         </div>
@@ -210,6 +227,17 @@
     </div>
     </div>
     <script>
+function navigate(selectedValue) {
+        if (selectedValue) {
+            // Scroll to the associated anchor on the page
+            var targetElement = $('#' + selectedValue);
+            $('html, body').animate({
+                scrollTop: targetElement.offset().top
+            }, 500);
+            window.location.hash = selectedValue;
+        }
+    }
+
         $(document).ready(function() {
     var scrollContent = $('#scrollContent');
     var current_panel = "hey";
@@ -235,6 +263,15 @@
             current_panel = new_panel;
         }
     });
+
+    $('#mobileDropdown').focus();
+
+    //Handle navigation on mobile : 
+    $('#mobileDropdown').on('change', function() {
+        var selectedValue = $(this).val();
+        navigate(selectedValue);
+    });
+    
 });
 
     </script>

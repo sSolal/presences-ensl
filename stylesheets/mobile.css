@@ -1,0 +1,69 @@
+@media screen and (max-width: 900px) {
+    h1 {
+      font-size: 50px;
+    }
+    .menu {
+        display: none;
+    }
+    .top_menu{
+        position:fixed;
+        display:flex;
+    }
+    .page {
+        margin-left:0px;
+        margin-top:60px;
+    }
+    .hero{
+        height: calc(100vh - 60px);
+    }
+    .slides{
+        width:100%;
+    }
+    .hero_text{
+        width:90%;
+        font-size:23px;
+    }
+    .scrollable{
+        width:100%;
+    }
+
+    .panel{
+        min-height:0px;
+    }
+
+    .slides{
+        display:none;
+    }
+
+    /* Preliminary work to try and make them fit on mobile, but just hidden for now */
+    .slides{
+        width:100%;
+        height:30vh;
+        top:70vh;
+        margin-left:-100vw;
+    }
+    .slide{
+        height:30vh;
+        padding:0px;
+        font-size:20px;
+    }
+    .slide > p{
+        font-size:20px;
+    }
+    .slide_panel{
+        padding:10px;
+        border-radius:10px;
+    }
+    .slide_panel > h2{
+        font-size:20px;
+        margin:0px;
+    }
+    .secondary{
+        display: none;
+    }
+    .mobile_only{
+        display:block;
+    }
+
+  }
+  
