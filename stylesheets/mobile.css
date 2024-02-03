@@ -1,4 +1,7 @@
-@media screen and (max-width: 900px) {
+@media only screen and (max-width: 900px) and (-webkit-min-device-pixel-ratio: 1),
+only screen and (max-width: 1800px) and (-webkit-min-device-pixel-ratio: 2),
+only screen and (hover: none) and (pointer: coarse)
+ {
     h1 {
       font-size: 50px;
     }
@@ -66,4 +69,48 @@
     }
 
   }
-  
+ @media only screen and (-webkit-min-device-pixel-ratio: 2){
+    .top_menu{
+        height:120px;
+    }
+    .hero_text{
+        font-size:25px;
+    }
+    .page{
+        margin-top:120px;
+    }
+    .top_menu>span{
+        width:120px;
+        height:120px;
+        font-size:120px !important;
+    }
+    .top_menu>h3{
+        font-size:50px;
+    }
+    .hero_text{
+        font-size:50px;
+    }
+    h2{
+        margin-top : 140px;
+    }
+    .button{
+        width:50%;
+        font-size:40px;
+        text-align:center;
+    }
+    .share{
+        font-size:40px;
+    }
+    form > p{
+        font-size:40px;
+    }
+    form{
+        align-items:center;
+
+    }
+ }
+ @media only screen and (-webkit-min-device-pixel-ratio: 3){
+    .top_menu{
+        height:180px;
+    }
+ }
