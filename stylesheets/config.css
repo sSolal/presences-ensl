@@ -1,0 +1,51 @@
+html{
+    /* FONTS */
+    --title-font: 'Ubuntu', sans-serif;;
+    --text-font: 'Nunito', sans-serif;
+
+
+    /* COLORS */
+    /* Page */
+    --background-color: #E3EBFF;
+
+    --menu-begin-color: #2A385C;
+    --menu-end-color: #2E4B96;
+
+    --hero-color1: #5875bf;
+    --hero-color3: #192c5e;
+    --hero-color2: #4238ac;
+
+    /* Slides */
+
+    --slide-color1: #B4C5F1;
+    --slide-color2: #EBD2BC;
+    --slide-color3: #B4D6AF;
+    --slide-color4: #D6BCDA;
+    --slide-color5: #B4C5F1;
+
+    /* Elements */
+
+    --button-color: #354C86;
+    --hover-color: #4863A9;
+
+    --text-color: #2A385C;
+    --shadow-color: #1d274081;
+
+    /* DIMENSIONS */
+
+    font-size: calc((1vw + 1.1vh)/2);
+
+    /* Page */
+    --menu-width: 15vw; /*Side menu*/
+    --menu-height:10vh; /*Top menu*/
+
+    --button-height:1em;
+
+    /* Texts */
+    --title-size: 8em;
+    --section-size : 3em;
+    --subsection-size: 2.2em;
+    --text-size : 1.8em;
+
+
+}

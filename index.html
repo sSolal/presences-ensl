@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Présences</title>
+    <link rel="stylesheet" href="stylesheets/config.css"></link>
     <link rel="stylesheet" href="stylesheets/components.css"></link>
     <link rel="stylesheet" href="stylesheets/style.css"></link>
     <link rel="stylesheet" href="stylesheets/structure.css"></link>
@@ -12,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
@@ -32,37 +34,37 @@
         
     </div>
     <div class="menu">
-        <div class="menu_button" onclick="navigate('landing')">
+        <div class="button" onclick="navigate('landing')">
                 <span class="menu_button_picto material-symbols-outlined">
                 home
                 </span>
             <div class="menu_button_text">Présences</div>
         </div>
-        <div class="menu_button" onclick="navigate('what')">
+        <div class="button" onclick="navigate('what')">
             <span class="menu_button_picto material-symbols-outlined">
             home
             </span>
         <div class="menu_button_text">L'asso</div>
         </div>
-        <div class="menu_button" onclick="navigate('calendar')">
+        <div class="button" onclick="navigate('calendar')">
             <span class="menu_button_picto material-symbols-outlined">
             event
             </span>
         <div class="menu_button_text">Calendrier</div>
         </div>    
-        <div class="menu_button" onclick="navigate('structure')">
+        <div class="button" onclick="navigate('structure')">
             <span class="menu_button_picto material-symbols-outlined">
             filter_vintage
             </span>
         <div class="menu_button_text">Pôles</div>
         </div>
-        <div class="menu_button" onclick="navigate('contact')">
+        <div class="button" onclick="navigate('contact')">
             <span class="menu_button_picto material-symbols-outlined">
             connect_without_contact
             </span>
         <div class="menu_button_text">Contact</div>
         </div>
-        <div class="menu_button" onclick="navigate('ressources')">
+        <div class="button" onclick="navigate('ressources')">
             <span class="menu_button_picto material-symbols-outlined">
             auto_stories
             </span>
@@ -124,16 +126,20 @@
                     <h2>Comment ça va ?</h2>
                     <form class="inline_share" method="post" action="#contact">
                         <div class="share" contenteditable="true" name="message" placeholder="Si vous avez quelque chose à partager, une question, une remarque, n'hésitez pas :)"></div>
-                        <input type="submit" class="button" value="Envoyer">
+                        <input type="submit" class="button send_button" value="Envoyer">
                     </form>
                     <p>Nous sommes aussi sur <a href="https://instagram.com/presences_ensl">Instagram</a>, disponibles par mail à l'adresse <a href="mailto:presences.contact@ens-lyon.fr">presences.contact@</a>, et vous pouvez <a href="#adhesion">adhérer</a> à l'association pour recevoir nos diffusions !</p>
                 </div>
                 <div id="ressources" class="panel">
                     <h2>Et on a aussi plein de ressources à vous proposer !</h2>
                     <h3> Notre <a href="documents/guide_de_survie.pdf" target="_blank">guide de survie en milieu universitaire</a></h3>
+                    <p>
                     Une petite compilation de conseils, de réflexions, et d'informations qu'on aurait bien aimé avoir entendu en arrivant en première année.
                     <h3>Une sélection de livres intéressants</h3>
+                    <p>
                     Disponibles à l'emprunt pendant nos permanences, nous vous proposons la lecture de ces livres qui nous ont marqué, touché et parfois aidé
+                </p>
+                    </p>
                     <ul>
                         <li><em>Goupil ou Face</em></li>
                         <li><em>La différence invisible</em></li>
@@ -141,13 +147,14 @@
                         <!--TO DO : Finir cette liste TO DO-->
                     </ul>
                     <h3>Le <a href="https://www.nightline.fr/kit-de-vie" target="_blank">kit de survie de Nightline</a></h3>
-                    Rien à dire de plus, Nightline produit vraiment de très bonnes ressources sur des tas de sujets.
-
+                    
+                    <p>Rien à dire de plus, Nightline produit vraiment de très bonnes ressources sur des tas de sujets.
+                    </p>
                     <h3>Prochainement : notre podcast sur le spectre autistique</h3>
                 </div>
                 <div id="administratif" class="panel" style="margin-top:50vh">
                     <h2>Côté administratif</h2>
-                    <p>Présences est une association loi 1901 sise à l'ENS de Lyon</p>
+                    <p>Présences est une association loi 1901 domiciliée à l'ENS de Lyon</p>
                     <h3 id="adhesion">Adhérer à l'association</h3>
                     <form method="post" class="adhesion_form" action="#adhesion">
                         <input type="text" class="text_input" name="name" placeholder="Prénom"/>
@@ -158,7 +165,7 @@
                         <input type="checkbox" class="checkbox" id="ens" name="ens" />
                         <label for="ens">à l'ENS ?</label>
                         </div>
-                        <input type="submit" class="button" value="Envoyer">
+                        <input type="submit" id="send_button" class="button send_button" value="Envoyer">
                     </form>
 
                     <h3>Documents officiels</h3>
@@ -216,7 +223,7 @@
                         <p class="secondary">Si vous avez connaissance de ressources qui vous paraissent avoir leur place ici, dites le nous !</p>
                         <form class="inline_share" method="post" action="#contact">
                             <div contenteditable="true" class="share" placeholder="Des suggestions de ressources ?"></div>
-                            <input type="submit" class="button" value="Envoyer">
+                            <input type="submit" class="button send_button" value="Envoyer">
                         </form>
                         </div>
                 </div>
@@ -227,54 +234,6 @@
         </div>
     </div>
     </div>
-    <script>
-function navigate(selectedValue) {
-        if (selectedValue) {
-            // Scroll to the associated anchor on the page
-            var targetElement = $('#' + selectedValue);
-            $('html, body').animate({
-                scrollTop: targetElement.offset().top
-            }, 500);
-            window.location.hash = selectedValue;
-        }
-    }
-
-        $(document).ready(function() {
-    var scrollContent = $('#scrollContent');
-    var current_panel = "hey";
-    $("#slide_"+current_panel).addClass("active");
-    var panels = Object.fromEntries( $(".panel").get().map( x => [x.id, x]) );
-    console.log(panels);
-    $(window).scroll(function() {
-        var scrollPosition = $(this).scrollTop();
-        var new_panel = current_panel;
-        var best_cand = Number.MAX_VALUE;
-        for (const [name, panel] of Object.entries(panels)) {
-            if (panel.offsetTop+panel.offsetHeight - window.innerHeight/4 - scrollPosition < 0) {
-                continue;
-            }
-            if (panel.offsetTop + panel.offsetHeight - window.innerHeight/4 - scrollPosition < best_cand) {
-                best_cand = panel.offsetTop - scrollPosition;
-                new_panel = name;
-            }
-        }
-        if (new_panel != current_panel) {
-            $("#slide_"+current_panel).removeClass("active");
-            $("#slide_"+new_panel).addClass("active");
-            current_panel = new_panel;
-        }
-    });
-
-    $('#mobileDropdown').focus();
-
-    //Handle navigation on mobile : 
-    $('#mobileDropdown').on('change', function() {
-        var selectedValue = $(this).val();
-        navigate(selectedValue);
-    });
     
-});
-
-    </script>
 </body>
-</html>
+</html>>

@@ -2,12 +2,6 @@
 html, body {
   margin:0px;
   padding:0px;
-  background-color: #eeeeee;
-}
-
-h1{
-  text-align: center;
-  font-size: 100px;
 }
 
 .container{
@@ -16,23 +10,18 @@ h1{
 }
 
 .menu {
-  background-color: rgb(193, 248, 255);
-  box-shadow: -5px 0px 20px darkblue;
-  width:100px;
+  width:var(--menu-width);
   height:100vh;
   box-sizing: border-box;
   position:fixed;
   display:flex;
   flex-direction: column;
-  justify-content: space-around;
-  padding-top:5vh;
-  padding-bottom:10vh;
+  padding-top:var(--button-height);
 }
+
 .top_menu{
-  background-color: rgb(193, 248, 255);
-  box-shadow: 0px -5px 20px darkblue;
   width:100vw;
-  height:60px;
+  height:var(--menu-height);
   position:fixed;
   display:none;
   flex-direction: row;
@@ -40,43 +29,13 @@ h1{
   align-items: center;
   z-index:15;
 }
-.top_menu > span{
-  color:#555;
-  width:fit-content;
-  margin:0px;
-  margin-left:20px
-}
-.top_menu > h3{
-  width:fit-content;
-  height:fit-content;
-  margin:0px;
-}
-
 
 .menu_button{
   display:block;
-  height:80px;
-  margin:10px;
-  border-radius:10px;
-  background-color:rgb(85, 164, 243);
-  box-shadow: inset 5px 5px 10px rgb(138, 196, 255);
-  text-decoration: none;
-}
-.menu_button_picto{
-  text-align: center;
-  width:100%;
-  margin-top:10px;
-  font-size:40px !important;
-}
-.menu_button_text{
-  text-align:center;
-  font-size: 14px;
-  color: rgb(0, 0, 0);
 }
 
 .page {
-  background-color: #eeeeee;
-  margin-left:100px;
+  margin-left:var(--menu-width);
   display:flex;
   flex-direction: column;
   flex-grow:1;
@@ -88,11 +47,6 @@ h1{
   height:100vh;
 }
 .hero_panel{
-  background: linear-gradient(217deg, #00e1ff, rgba(255,0,0,0) 70.71%),
-            linear-gradient(127deg, #0983d5, rgba(0,255,0,0) 70.71%),
-            linear-gradient(0deg, rgba(0, 0, 180, 0.8), rgba(0,0,255,0) 70.71%);
-  border-radius:40px;
-  margin : 16px;
   flex-grow: 1;
   display:flex;
   flex-direction:column;
@@ -106,37 +60,35 @@ h1{
 
 .scrollable{
     width:50%;
-    border-radius:50px;
 }
 .slides{
-
     height:100vh;
-    width:50%;
+    width:49%;
     position:sticky;
-    border-radius: 50px;
-    top:0px;
+    top: 0px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .slide{
-
-    height:100vh;
+    min-height:60vh;
     width:100%;
     position:absolute;
-
+    display:flex;
     opacity:0;
     transition: opacity 500ms ease-in-out;
-    display:flex;
+  
 }
-.slide_panel{
-  flex-grow:1;
-  margin:10px;
-  border-radius:50px;
-  padding:50px;
-}
-
 .slide.active{
   opacity:1;
   z-index:10;
 }
+
+.slide_panel{
+  flex-grow:1;
+}
+
+
 .panel{
     padding:50px;
     min-height:100vh;

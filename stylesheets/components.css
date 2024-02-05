@@ -1,39 +1,105 @@
 
-h1, h2, h3{
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 400;
-}
-span{
-    color:#eeeeee;
-}
 .menu_button > div{
     color:#333333;
     font-weight: 800;
+    color: rgb(255, 255, 255);
 }
-
+.menu > .button{
+    margin:20px;
+    border-radius:10px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+  }
+.menu > .button > span{ /* Pictos */
+    font-size:1.5em !important;
+    margin-right : 10px;
+}
+  
 .button{
+    cursor:pointer;
+    height:var(--button-height);
     padding:20px;
-    width:fit-content;
-    height:fit-content;
-    display:block;
-    position:relative;
-    border-radius: 10px;
-    font-size: 24px;
-    background-color: #5f9dee;
+    border-radius: 15px;
+    font-size:1.5em;
+    font-weight:bold;
+    background-color: var(--button-color);
+    transition: background-color 0.2s;
     color: white;
-    border:none;
     text-decoration: none;
 }
+.button:hover{
+    background-color: var(--hover-color);
+}
+.send_button{
+    height:3em;
+    width:100%;
+  }
+
+
+
 .inline_share{
     display:flex;
+    flex-direction:column;
     flex-grow:1;
     align-items:center;
 }
-.inline_share > input {
-    border-radius : 5px;
-    height:80px;
+
+.share{
+    min-height: 60px;
+    padding: 10px;
+    font-size: var(--text-size);
+    border:none;
+    background-color: #ffffff;
+    border-radius: 5px;
     box-sizing: border-box;
+    width:100%;
+  }
+  .share:empty::before {
+    content: attr(placeholder);
+    color: #555; 
+  }
+  
+  .share:empty:focus::before {
+    content: "";
+  }
+  
+span{
+    color:#eeeeee;
 }
-.inline_share > .button {
+
+
+
+.adhesion_form{
+    display:flex;
+    flex-direction: column;
+  }
+
+
+.text_input{
+    display: block;
+    height:40px;
+    font-size: 24px;
+  }
+  .checkbox{
+    height:40px;
+    width:40px;
+    margin-right:10px;
+  }
+
+
+iframe{
+    flex-grow:1;
+    border-radius: 5px;
+    margin-bottom:20px;
+  }
+
+
+
+#mobileDropdown{
+    opacity:0;
+    position:absolute;
+    width:80px;
     height:80px;
-}
+    left:10px;
+  }
