@@ -11,6 +11,8 @@ html{
     --menu-begin-color: #2A385C;
     --menu-end-color: #2E4B96;
 
+    --shadow-color: #1d274081;
+
     --hero-color1: #5875bf;
     --hero-color3: #192c5e;
     --hero-color2: #4238ac;
@@ -29,7 +31,6 @@ html{
     --hover-color: #4863A9;
 
     --text-color: #2A385C;
-    --shadow-color: #1d274081;
 
     /* DIMENSIONS */
 

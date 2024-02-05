@@ -11,19 +11,21 @@ body{
 }
 
 .top_menu{
-  background-color: var(--menu-color);
+  background: linear-gradient(270deg, var(--menu-begin-color), var(--menu-end-color) 20%);
   box-shadow: 0px 0px 20px var(--shadow-color);
 }
 .top_menu > span{
-  color:#555;
+  color:#ffffff;
+  font-size:3em;
   width:fit-content;
   margin:0px;
   margin-left:20px
 }
-.top_menu > h3{
+.top_menu > h1{
   width:fit-content;
   height:fit-content;
   margin:0px;
+  color: var(--background-color);
 }
 
 .hero_panel{
@@ -71,6 +73,14 @@ em{
 }
 ul{
   font-size: var(--text-size);
+}
+a{
+  color: var(--hover-color);
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+  color: var(--button-color);
 }
 
 
