@@ -1,12 +1,23 @@
-@media only screen and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 1),
-only screen and (max-width: 1800px) and (-webkit-min-device-pixel-ratio: 2),
+@media only screen and (-webkit-min-device-pixel-ratio: 2)
+{
+
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3)
+{
+
+}
+
+@media only screen and (max-width: 900px),
 only screen and (hover: none) and (pointer: coarse)
  {
-    body{
+    html{
     font-size:2vw;
     }
     h1 {
       font-size : calc(var(--title-size)/2);
+    }
+    .hero_text{
+        font-size: calc(1vw*1vh);
     }
     .menu {
         display: none;
@@ -20,14 +31,13 @@ only screen and (hover: none) and (pointer: coarse)
         margin-top:var(--menu-height);
     }
     .hero{
-        height: calc(100vh - var(--menu-height));
+        min-height: calc(100vh - var(--menu-height));
     }
     .slides{
         width:100%;
     }
     .hero_text{
         width:90%;
-        font-size:23px;
     }
     .scrollable{
         width:100%;
@@ -41,29 +51,7 @@ only screen and (hover: none) and (pointer: coarse)
         display:none;
     }
 
-    /* Preliminary work to try and make them fit on mobile, but just hidden for now */
-    .slides{
-        width:100%;
-        height:30vh;
-        top:70vh;
-        margin-left:-100vw;
-    }
-    .slide{
-        height:30vh;
-        padding:0px;
-        font-size:20px;
-    }
-    .slide > p{
-        font-size:20px;
-    }
-    .slide_panel{
-        padding:10px;
-        border-radius:10px;
-    }
-    .slide_panel > h2{
-        font-size:20px;
-        margin:0px;
-    }
+    
     .secondary{
         display: none;
     }
@@ -72,48 +60,3 @@ only screen and (hover: none) and (pointer: coarse)
     }
 
   }
- @media only screen and (-webkit-min-device-pixel-ratio: 2){
-    .top_menu{
-        height:120px;
-    }
-    .hero_text{
-        font-size:25px;
-    }
-    .page{
-        margin-top:120px;
-    }
-    .top_menu>span{
-        width:120px;
-        height:120px;
-        font-size:120px !important;
-    }
-    .top_menu>h3{
-        font-size:50px;
-    }
-    .hero_text{
-        font-size:50px;
-    }
-    h2{
-        margin-top : 140px;
-    }
-    .button{
-        width:50%;
-        font-size:40px;
-        text-align:center;
-    }
-    .share{
-        font-size:40px;
-    }
-    form > p{
-        font-size:40px;
-    }
-    form{
-        align-items:center;
-
-    }
- }
- @media only screen and (-webkit-min-device-pixel-ratio: 3){
-    .top_menu{
-        height:180px;
-    }
- }

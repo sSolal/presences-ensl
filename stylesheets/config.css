@@ -34,19 +34,20 @@ html{
 
     /* DIMENSIONS */
 
-    font-size: calc((1vw + 1.1vh)/2);
+    /*font-size: calc((1vw + 1.1vh)/2); Attempt to make things better on edge cases */
+    font-size: 1vw;
 
     /* Page */
     --menu-width: 15vw; /*Side menu*/
     --menu-height:10vh; /*Top menu*/
 
-    --button-height:1em;
+    --button-height:1rem;
 
     /* Texts */
-    --title-size: 8em;
-    --section-size : 3em;
-    --subsection-size: 2.2em;
-    --text-size : 1.8em;
+    --title-size: 8rem;
+    --section-size : 3rem;
+    --subsection-size: 2.2rem;
+    --text-size : 1.8rem;
 
 
 }

@@ -7,7 +7,7 @@ body{
 
 .menu{
   background: linear-gradient(var(--menu-begin-color), var(--menu-end-color) 90%);
-  box-shadow: 0px 0px 20px var(--shadow-color);
+  box-shadow: 0px 0px 4rem var(--shadow-color);
 }
 
 .top_menu{
@@ -19,7 +19,7 @@ body{
   font-size:3em;
   width:fit-content;
   margin:0px;
-  margin-left:20px
+  margin-left:2vw;
 }
 .top_menu > h1{
   width:fit-content;
@@ -32,14 +32,13 @@ body{
   background: linear-gradient(217deg, var(--hero-color1), rgba(255,0,0,0) 70%),
             linear-gradient(127deg, var(--hero-color2), rgba(0,255,0,0) 70%),
             linear-gradient(0deg, var(--hero-color3), rgba(0,0,255,0) 70%);
-  border-radius:50px;
+  border-radius:5rem;
   margin : 2em;
 }
 
 .slide_panel{
-  margin:10px;
-  border-radius:50px;
-  padding:50px;
+  border-radius:5rem;
+  padding: 5rem;
 }
 
 /* TEXTS */
@@ -60,7 +59,7 @@ h3{
   margin-top:1em;
 }
 .hero_text{
-  font-size:2em;
+  font-size : 1.8rem;
   text-align: center;
   font-weight:500;
   width:60%;
@@ -100,7 +99,7 @@ a:hover{
   display:flex;
   flex-direction: column;
   justify-content: stretch;
-  padding:20px;
+  padding:2rem;
 }
 #slide_structure > div {
   background-color: var(--slide-color3);

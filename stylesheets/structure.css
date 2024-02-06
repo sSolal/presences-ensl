@@ -1,6 +1,6 @@
 
 html, body {
-  margin:0px;
+  margin:0;
   padding:0px;
 }
 
@@ -44,7 +44,7 @@ html, body {
 .hero {
   display:flex;
   flex-grow:1;
-  height:100vh;
+  min-height:100vh;
 }
 .hero_panel{
   flex-grow: 1;
@@ -90,7 +90,7 @@ html, body {
 
 
 .panel{
-    padding:50px;
+    padding:2vw;
     min-height:100vh;
     flex-grow:1;
 }
