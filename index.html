@@ -124,9 +124,10 @@
                 </div>
                 <div id="contact" class="panel">
                     <h2>Comment ça va ?</h2>
-                    <form class="inline_share" method="post" netlify>
+                    <form class="inline_share" action="/thanks.html" method="post" netlify>
                         <div class="share" contenteditable="true" name="message" id="editable_contact" placeholder="Si vous avez quelque chose à partager, une question, une remarque, n'hésitez pas :)"></div>
                         <input type="hidden" id="hidden_contact" name="message">
+                        <input type="hidden" id="hidden_form_name" name="formulaire" value="Contact principal">
                         <input type="submit" class="button send_button" value="Envoyer">
                     </form>
                     <p>Nous sommes aussi sur <a href="https://instagram.com/presences_ensl">Instagram</a>, disponibles par mail à l'adresse <a href="mailto:presences.contact@ens-lyon.fr">presences.contact@</a>, et vous pouvez <a href="#adhesion">adhérer</a> à l'association pour recevoir nos diffusions !</p>
@@ -157,7 +158,7 @@
                     <h2>Côté administratif</h2>
                     <p>Présences est une association loi 1901 domiciliée à l'ENS de Lyon</p>
                     <h3 id="adhesion">Adhérer à l'association</h3>
-                    <form method="post" class="adhesion_form" action="#adhesion">
+                    <form method="post" class="adhesion_form" action="/thanks_adhesion.html" netlify>
                         <input type="text" class="text_input" name="name" placeholder="Prénom"/>
                         <input type="text" class="text_input" name="familyname" placeholder="Nom"/>
                         <input type="text" class="text_input" name="email" placeholder="Adresse mail"/>
@@ -166,7 +167,9 @@
                         <input type="checkbox" class="checkbox" id="ens" name="ens" />
                         <label for="ens">à l'ENS ?</label>
                         </div>
+                        <input type="hidden" id="hidden_form_name" name="formulaire" value="Adhésion">
                         <input type="submit" id="send_button" class="button send_button" value="Adhérer">
+                        
                     </form>
 
                     <h3>Documents officiels</h3>
@@ -222,8 +225,10 @@
                     <div class="slide_panel">
 
                         <p class="secondary">Si vous avez connaissance de ressources qui vous paraissent avoir leur place ici, dites le nous !</p>
-                        <form class="inline_share" method="post" action="#contact">
-                            <div contenteditable="true" class="share" placeholder="Des suggestions de ressources ?"></div>
+                        <form class="inline_share" action="/thanks.html" method="post" action="#contact" netlify>
+                            <div contenteditable="true" class="share" id="editable_ressources" placeholder="Des suggestions de ressources ?"></div>
+                            <input type="hidden" id="hidden_ressources" name="ideas">
+                            <input type="hidden" id="hidden_form_name" name="formulaire" value="Ressources">
                             <input type="submit" class="button send_button" value="Envoyer">
                         </form>
                         </div>
@@ -237,12 +242,17 @@
     </div>
 
 <script>
-    function updateHiddenInput() {
-    document.getElementById("hidden_contact").value = document.getElementById("editable_contact").innerText;
+    function updateHiddenInputs(name) {
+    document.getElementById("hidden_"+name).value = document.getElementById("editable_"+name).innerText;
+
 }
 
-// Listen for input events on the div
-document.getElementById("editable_contact").addEventListener('input', updateHiddenInput);
+let forms = ["contact", "ressources"];
+
+for (let form of forms) {
+    document.getElementById("editable_"+form).addEventListener('input', ()=>updateHiddenInputs(form));
+}
+
 </script>
 
 </body>
