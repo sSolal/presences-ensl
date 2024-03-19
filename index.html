@@ -125,7 +125,8 @@
                 <div id="contact" class="panel">
                     <h2>Comment ça va ?</h2>
                     <form class="inline_share" method="post" netlify>
-                        <div class="share" contenteditable="true" name="message" placeholder="Si vous avez quelque chose à partager, une question, une remarque, n'hésitez pas :)"></div>
+                        <div class="share" contenteditable="true" name="message" id="editable_contact" placeholder="Si vous avez quelque chose à partager, une question, une remarque, n'hésitez pas :)"></div>
+                        <input type="hidden" id="hidden_contact" name="message">
                         <input type="submit" class="button send_button" value="Envoyer">
                     </form>
                     <p>Nous sommes aussi sur <a href="https://instagram.com/presences_ensl">Instagram</a>, disponibles par mail à l'adresse <a href="mailto:presences.contact@ens-lyon.fr">presences.contact@</a>, et vous pouvez <a href="#adhesion">adhérer</a> à l'association pour recevoir nos diffusions !</p>
@@ -234,6 +235,15 @@
         </div>
     </div>
     </div>
+
+<script>
+    function updateHiddenInput() {
+    document.getElementById("hidden_contact").value = document.getElementById("editable_contact").innerText;
+}
+
+// Listen for input events on the div
+document.getElementById("editable_contact").addEventListener('input', updateHiddenInput);
+</script>
 
 </body>
 </html>>
