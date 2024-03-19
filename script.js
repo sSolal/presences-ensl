@@ -43,3 +43,10 @@ $(document).ready(function () {
     });
 
 });
+
+
+$(async ()=>{
+let reponse = await fetch("/.netlify/functions/calendar");
+let data = await reponse.json();
+console.log(data);
+});
