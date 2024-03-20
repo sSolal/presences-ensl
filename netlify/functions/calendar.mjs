@@ -1,46 +1,96 @@
-export default async (req, context) => {
-    let iCalFlux = "https://calendar.google.com/calendar/ical/presences.ensl%40gmail.com/public/basic.ics?orderby=starttime&sortorder=ascending&futureevents=true&alt=json";
 
+//From https://github.com/cwlsn/ics-to-json/blob/master/icsToJson.js
+const NEW_LINE = /\r\n|\n|\r/;
 
-    let reponse = await fetch(iCalFlux, {
-      headers: {
-        "Accept": "application/json"
+const EVENT = "VEVENT";
+const EVENT_START = "BEGIN";
+const EVENT_END = "END";
+const START_DATE = "DTSTART";
+const END_DATE = "DTEND";
+const DESCRIPTION = "DESCRIPTION";
+const SUMMARY = "SUMMARY";
+const LOCATION = "LOCATION";
+const ALARM = "VALARM";
+
+const keyMap = {
+  [START_DATE]: "startDate",
+  [END_DATE]: "endDate",
+  [DESCRIPTION]: "description",
+  [SUMMARY]: "summary",
+  [LOCATION]: "location"
+};
+
+const clean = string => unescape(string).trim();
+
+const icsToJson = icsData => {
+  const array = [];
+  let currentObj = {};
+  let lastKey = "";
+
+  const lines = icsData.split(NEW_LINE);
+
+  let isAlarm = false;
+  for (let i = 0, iLen = lines.length; i < iLen; ++i) {
+    const line = lines[i];
+    const lineData = line.split(":");
+
+    let key = lineData[0];
+    const value = lineData[1];
+
+    if (key.indexOf(";") !== -1) {
+      const keyParts = key.split(";");
+      key = keyParts[0];
+      // Maybe do something with that second part later
+    }
+
+    if (lineData.length < 2) {
+      if (key.startsWith(" ") && lastKey !== undefined && lastKey.length) {
+        currentObj[lastKey] += clean(line.substr(1));
       }
-    });
-    let data = await reponse.json();
+      continue;
+    } else {
+      lastKey = keyMap[key];
+    }
 
-    return new Response(JSON.stringify(data));
+    switch (key) {
+      case EVENT_START:
+        if (value === EVENT) {
+          currentObj = {};
+        } else if (value === ALARM) {
+          isAlarm = true;
+        }
+        break;
+      case EVENT_END:
+        isAlarm = false;
+        if (value === EVENT) array.push(currentObj);
+        break;
+      case START_DATE:
+        currentObj[keyMap[START_DATE]] = value;
+        break;
+      case END_DATE:
+        currentObj[keyMap[END_DATE]] = value;
+        break;
+      case DESCRIPTION:
+        if (!isAlarm) currentObj[keyMap[DESCRIPTION]] = clean(value);
+        break;
+      case SUMMARY:
+        currentObj[keyMap[SUMMARY]] = clean(value);
+        break;
+      case LOCATION:
+        currentObj[keyMap[LOCATION]] = clean(value);
+      default:
+        continue;
+    }
+  }
+  return array;
+};
 
-    /*
-    // Get list of upcoming iCal events formatted in JSON
-    jQuery.getJSON(iCalFlux, function(data){
-        // Parse and render each event
-        jQuery.each(data.feed.entry, function(i, item){
-          var event_url = jQuery.trim(item.content.$t);
-          var event_header = item.title.$t;
-          if(event_url.length > 0) {
-            event_header = "<a href='" + event_url + "'>" + event_header + "</a>";
-          };
-          // Format the date string
-          var d = new Date(item.gd$when[0].startTime);
-          var d_string = '<strong>' + d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate() + '</strong>';
-          if(d.getHours() != 0 || d.getMinutes() != 0) {
-            d_string = d_string + ' at ' + lpad(d.getHours(), '0', 2) + ':' + lpad(d.getMinutes(), '0', 2);
-          };
-          // Render the event
-          jQuery("#next-events li").last().before(
-            "<li><strong>"
-            + event_header
-            + "</strong><br/>Date: "
-            + d_string
-            + "<br/>Venue: <a href='https://maps.google.com/maps?q="
-            + item.gd$where[0].valueString
-            + "' target='_blank'>"
-            + item.gd$where[0].valueString
-            + "</a></li>");
-        });
-      });
+export default async (req, context) => {
+    let iCalFlux = "https://calendar.google.com/calendar/ical/presences.ensl%40gmail.com/public/basic.ics?orderby=starttime&sortorder=ascending&futureevents=true";
 
-    return new Response("Hello, world!");*/
+
+    let reponse = await fetch(iCalFlux);
+    let data = await reponse.text();
+    return new Response(JSON.stringify(icsToJson(data)));
   };
   
