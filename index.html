@@ -124,8 +124,10 @@
                 </div>
                 <div id="contact" class="panel">
                     <h2>Comment ça va ?</h2>
-                    <form class="inline_share" method="post" netlify>
-                        <div class="share" contenteditable="true" name="message" placeholder="Si vous avez quelque chose à partager, une question, une remarque, n'hésitez pas :) si vous souhaitez être recontacté, pensez à rajouter une adresse mail !"></div>
+                    <form class="inline_share" action="/thanks.html" method="post" netlify>
+                        <div class="share" contenteditable="true" name="message" id="editable_contact" placeholder="Si vous avez quelque chose à partager, une question, une remarque, n'hésitez pas :) si vous souhaitez être recontacté, pensez à rajouter une adresse mail !"></div>
+                        <input type="hidden" id="hidden_contact" name="message">
+                        <input type="hidden" id="hidden_form_name" name="formulaire" value="Contact principal">
                         <input type="submit" class="button send_button" value="Envoyer">
                     </form>
                     <p>Nous sommes aussi sur <a href="https://instagram.com/presences_ensl">Instagram</a>, disponibles par mail à l'adresse <a href="mailto:presences.contact@ens-lyon.fr">presences.contact@</a>, et vous pouvez <a href="#adhesion">adhérer</a> à l'association pour recevoir nos diffusions !</p>
@@ -156,7 +158,7 @@
                     <h2>Côté administratif</h2>
                     <p>Présences est une association loi 1901 domiciliée à l'ENS de Lyon</p>
                     <h3 id="adhesion">Adhérer à l'association</h3>
-                    <form method="post" class="adhesion_form" action="#adhesion">
+                    <form method="post" class="adhesion_form" action="/thanks_adhesion.html" netlify>
                         <input type="text" class="text_input" name="name" placeholder="Prénom"/>
                         <input type="text" class="text_input" name="familyname" placeholder="Nom"/>
                         <input type="text" class="text_input" name="email" placeholder="Adresse mail"/>
@@ -165,7 +167,9 @@
                         <input type="checkbox" class="checkbox" id="ens" name="ens" />
                         <label for="ens">à l'ENS ?</label>
                         </div>
+                        <input type="hidden" id="hidden_form_name" name="formulaire" value="Adhésion">
                         <input type="submit" id="send_button" class="button send_button" value="Adhérer">
+
                     </form>
 
                     <h3>Documents officiels</h3>
@@ -194,7 +198,10 @@
 
                         <h2>Prochains évènements : </h2>
                         <!--TO DO See https://github.com/MilanLund/FormatGoogleCalendar?tab=readme-ov-file for prettier options, TO DO-->
-                        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23e3baff&ctz=Europe%2FParis&mode=MONTH&hl=fr&showTitle=0&showPrint=0&showCalendars=0&showTz=0&showTabs=0&showDate=0&title&src=cHJlc2VuY2VzLmVuc2xAZ21haWwuY29t&color=%23039BE5" frameborder="0" scrolling="no"></iframe>
+                        <!--<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23e3baff&ctz=Europe%2FParis&mode=MONTH&hl=fr&showTitle=0&showPrint=0&showCalendars=0&showTz=0&showTabs=0&showDate=0&title&src=cHJlc2VuY2VzLmVuc2xAZ21haWwuY29t&color=%23039BE5" frameborder="0" scrolling="no"></iframe>-->
+                        <ul id="next-events">
+                            <li>Pas d'évènements dans le futur proche...</li>
+                        </ul>
                         </div>
                 </div>
                 <div id="slide_structure" class="slide">
@@ -221,8 +228,10 @@
                     <div class="slide_panel">
 
                         <p class="secondary">Si vous avez connaissance de ressources qui vous paraissent avoir leur place ici, dites le nous !</p>
-                        <form class="inline_share" method="post" action="#contact">
-                            <div contenteditable="true" class="share" placeholder="Des suggestions de ressources ?"></div>
+                        <form class="inline_share" action="/thanks.html" method="post" action="#contact" netlify>
+                            <div contenteditable="true" class="share" id="editable_ressources" placeholder="Des suggestions de ressources ?"></div>
+                            <input type="hidden" id="hidden_ressources" name="ideas">
+                            <input type="hidden" id="hidden_form_name" name="formulaire" value="Ressources">
                             <input type="submit" class="button send_button" value="Envoyer">
                         </form>
                         </div>
@@ -234,6 +243,19 @@
         </div>
     </div>
     </div>
+
+<script>
+    function updateHiddenInputs(name) {
+    document.getElementById("hidden_"+name).value = document.getElementById("editable_"+name).innerText;
+
+}
+
+let forms = ["contact", "ressources"];
+
+for (let form of forms) {
+    document.getElementById("editable_"+form).addEventListener('input', ()=>updateHiddenInputs(form));
+}
+</script>
 
 </body>
 </html>>
