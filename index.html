@@ -42,7 +42,7 @@
         </div>
         <div class="button" onclick="navigate('what')">
             <span class="menu_button_picto material-symbols-outlined">
-            home
+            groups
             </span>
         <div class="menu_button_text">L'asso</div>
         </div>
@@ -63,6 +63,13 @@
             connect_without_contact
             </span>
         <div class="menu_button_text">Contact</div>
+        </div>
+        <div class="button" onclick="navigate('creations')">
+            <span class="menu_button_picto material-symbols-outlined">
+            category
+            </span>
+        <div class="menu_button_text">Créations</div>
+        <div class="notif"></div>
         </div>
         <div class="button" onclick="navigate('ressources')">
             <span class="menu_button_picto material-symbols-outlined">
@@ -130,13 +137,27 @@
                         <input type="hidden" id="hidden_form_name" name="formulaire" value="Contact principal">
                         <input type="submit" class="button send_button" value="Envoyer">
                     </form>
-                    <p>Nous sommes aussi sur <a href="https://instagram.com/presences_ensl">Instagram</a>, disponibles par mail à l'adresse <a href="mailto:presences.contact@ens-lyon.fr">presences.contact@</a>, et vous pouvez <a href="#adhesion">adhérer</a> à l'association pour recevoir nos diffusions !</p>
+                    <p>Nous sommes aussi sur <a href="https://instagram.com/presences_ensl">Instagram</a>, disponibles par mail à l'adresse <a href="mailto:presences.contact@ens-lyon.fr">presences.contact @ ens-lyon.fr</a>, et vous pouvez <a href="#adhesion">adhérer</a> à l'association pour recevoir nos diffusions !</p>
                 </div>
-                <div id="ressources" class="panel">
-                    <h2>Et on a aussi plein de ressources à vous proposer !</h2>
+                <div id="creations" class="panel">
+                    <h2>Les contenus made in Présences :)</h2>
                     <h3> Notre <a href="documents/guide_de_survie.pdf" target="_blank">guide de survie en milieu universitaire</a></h3>
                     <p>
                     Une petite compilation de conseils, de réflexions, et d'informations qu'on aurait bien aimé avoir entendu en arrivant en première année.
+                    <h3> Notre podcast <a href="https://www.trensistor.fr/2024/04/stereotisme-bande-annonce/" target="_blank">Stéréo'tisme<div class="notif"></div></a> </h3>
+                    <p>
+                    Stéréotype, autisme et tout ça en stéréo. L’objectif de notre podcast est de sortir de l’éternel Rainman qui colle encore aux baskets de la communauté autiste. Venez nous écouter, pour découvrir des profils plus variés et en apprendre plus sur la neuroatypie.
+                    </p>
+                    <audio controls style="width:100%">
+                        <source src="documents/ba_podcast.wav" type="audio/wav">
+                      </audio>  
+                    <p>Si ce pilote vous a plu, n'hésitez surtout pas à aller découvrir la suite sur le site de <a href="https://www.trensistor.fr/2024/04/stereotisme-bande-annonce/" target="_blank">Trensistor</a></p>
+                     
+
+                </div>
+                <div id="ressources" class="panel">
+                    <h2>Et on a aussi plein de ressources à vous proposer !</h2>
+                    
                     <h3>Une sélection de livres intéressants</h3>
                     <p>
                     Disponibles à l'emprunt pendant nos permanences, nous vous proposons la lecture de ces livres qui nous ont marqué, touché et parfois aidé
@@ -152,7 +173,6 @@
 
                     <p>Rien à dire de plus, Nightline produit vraiment de très bonnes ressources sur des tas de sujets.
                     </p>
-                    <h3>Prochainement : notre podcast sur le spectre autistique</h3>
                 </div>
                 <div id="administratif" class="panel" style="margin-top:50vh">
                     <h2>Côté administratif</h2>
@@ -162,7 +182,7 @@
                         <input type="text" class="text_input" name="name" placeholder="Prénom"/>
                         <input type="text" class="text_input" name="familyname" placeholder="Nom"/>
                         <input type="text" class="text_input" name="email" placeholder="Adresse mail"/>
-                        <p>Promis on envoie une diffusion légère hebdomadaire, rien de plus :)</p>
+                        <p>Promis on envoie une légère diffusion hebdomadaire, rien de plus :)</p>
                         <div style="display:flex; align-items: center; width:100%; margin-bottom: 15px;">
                         <input type="checkbox" class="checkbox" id="ens" name="ens" />
                         <label for="ens">à l'ENS ?</label>
@@ -181,6 +201,7 @@
                     <h3>Composition actuelle du bureau</h3>
                     <ul>
                         <li>Présidence : Lou-Anne Drevon & Solal Stern</li>
+                        <li>Trésorerie : Camil Champin</li>
                         <!-- TO DO : Compléter cette liste TO DO-->
                     </ul>
                 </div>
@@ -234,6 +255,13 @@
                             <input type="hidden" id="hidden_form_name" name="formulaire" value="Ressources">
                             <input type="submit" class="button send_button" value="Envoyer">
                         </form>
+                        </div>
+                </div>
+                <div id="slide_creations" class="slide">
+                    <div class="slide_panel">
+
+                        <p class="secondary">Notre dernière création : le podcast Stéréo'tisme !</p>
+                        <p>N'hésitez pas à aller l'écouter sur le site de <a href="https://www.trensistor.fr/2024/04/stereotisme-bande-annonce/" target="_blank">Trensistor</a> :)</p>
                         </div>
                 </div>
             </div>

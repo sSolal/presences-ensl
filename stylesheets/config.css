@@ -13,8 +13,8 @@ html{
 
     --shadow-color: #1d274081;
 
-    --hero-color1: #5875bf;
-    --hero-color3: #192c5e;
+    --hero-color1: #0042f0;
+    --hero-color3: #0072a2;
     --hero-color2: #4238ac;
 
     /* Slides */
@@ -24,6 +24,7 @@ html{
     --slide-color3: #B4D6AF;
     --slide-color4: #D6BCDA;
     --slide-color5: #B4C5F1;
+    --slide-color6: rgb(161, 222, 152);
 
     /* Elements */
 
@@ -38,7 +39,7 @@ html{
     font-size: 1vw;
 
     /* Page */
-    --menu-width: 15vw; /*Side menu*/
+    --menu-width: 17vw; /*Side menu*/
     --menu-height:10vh; /*Top menu*/
 
     --button-height:1rem;

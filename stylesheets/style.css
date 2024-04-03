@@ -110,3 +110,15 @@ a:hover{
 #slide_ressources > div {
   background-color: var(--slide-color5);
 }
+#slide_creations > div{
+  background-color: var(--slide-color6);
+}
+
+.notif{
+  margin-left:1rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: #5dce00;
+  border-radius: 50%;
+  display:inline-block;
+}
