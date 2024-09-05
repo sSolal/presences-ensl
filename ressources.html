@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Présences</title>
+    <link rel="stylesheet" href="stylesheets/config.css"></link>
+    <link rel="stylesheet" href="stylesheets/components.css"></link>
+    <link rel="stylesheet" href="stylesheets/style.css"></link>
+    <link rel="stylesheet" href="stylesheets/structure.css"></link>
+    <link rel="stylesheet" href="stylesheets/mobile.css"></link>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <style>
+        body{
+            align-items: center;
+        }
+        iframe{
+            width: 100%;
+            height: 60vh;
+            border: none;
+        }
+        .wrapper{
+            position:relative
+        }
+        .hidder{
+            width:100%;
+            position:absolute;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Des associations</h2>
+    <div class="wrapper">
+    <!--The wrapper is there to create a position context. The hidder is there to prevent scrolling insde the iframe-->
+    <iframe height="60vh" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQmmM8x4HYFZ08OorTi0E6p_Ut-fd0vPsFE0HORp9wo6v93Rfmaq8OCSZewdd0J4BX47Qf-ddKn5u5O/pubhtml?gid=935321088&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+    <div style="height:60vh" class="hidder"></div>
+    </div>
+    
+    <h2>Des ressources numériques</h2>
+    <div class="wrapper">
+    <iframe style="height:180vh" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQmmM8x4HYFZ08OorTi0E6p_Ut-fd0vPsFE0HORp9wo6v93Rfmaq8OCSZewdd0J4BX47Qf-ddKn5u5O/pubhtml?gid=1335586647&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+    <div style="height:180vh" class="hidder"></div>
+    </div>
+
+    <h2>Des ressources papiers</h2>
+    <div class="wrapper">
+    <iframe height = "50vh" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQmmM8x4HYFZ08OorTi0E6p_Ut-fd0vPsFE0HORp9wo6v93Rfmaq8OCSZewdd0J4BX47Qf-ddKn5u5O/pubhtml?gid=1974540119&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+    <div style="height:50vh" class="hidder"></div>
+        </div>
+</body>
+</html>
